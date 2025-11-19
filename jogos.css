@@ -1,9 +1,4 @@
-:root {
-    --preto: #000000;
-    --amarelo: #c9a402; /* Amarelo escuro */
-    --cinza: #f0f0f0;
-    --branco: #ffffff;
-}
+
 
 /* RESET */
 body {
@@ -203,4 +198,3 @@ nav a {
         grid-template-columns: 1fr;
     }
 }
-
