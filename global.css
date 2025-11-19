@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
     --preto: #000000;
     --amarelo: #c9a402; /* Amarelo escuro */
@@ -7,10 +9,24 @@
 
 /* RESET */
 body {
-    margin: 0;
+    margin: 50px;
     font-family: Arial, sans-serif;
     background: var(--cinza); /* Fundo mais claro para contraste */
     color: var(--preto); /* Texto em preto */
+}
+
+div{
+padding: 20px;
+border-radius: 10px;
+width: 800px;
+margin: auto;
+min-width: 320px;
+max-width: 800px ;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
 /* HEADER */
@@ -29,6 +45,7 @@ header {
 .escudo {
     height: 300px;
     text-align: justify;
+
 }
 .jogador {
     height: 1px;
@@ -38,18 +55,20 @@ header {
 nav {
     display: flex;
     gap: 20px;
+    margin: auto;
 }
 
 nav a {
     color: var(--amarelo); /* Amarelo escuro para os links */
     font-weight: bold;
     text-decoration: none;
+    margin: auto;
 }
 
 /* Botão hambúrguer */
 .menu-btn {
     display: none;
-    font-size: 34px;
+    font-size: 20px;
     background: none;
     border: none;
     color: var(--amarelo); /* Amarelo escuro no botão */
@@ -68,12 +87,6 @@ nav a {
 .galeria {
     display: flex;
     gap: 10px;
-}
-
-.foto {
-    width: 150px;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
 /* Lightbox */
@@ -203,4 +216,6 @@ nav a {
         grid-template-columns: 1fr;
     }
 }
-
+footer{
+    color: rgb(15, 60, 78);
+}
