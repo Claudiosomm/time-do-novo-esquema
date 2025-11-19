@@ -1,10 +1,4 @@
-:root {
-    --preto: #000000;
-    --amarelo: #c9a402; /* Amarelo escuro */
-    --cinza: #f0f0f0;
-    --branco: #ffffff;
-}
-
+@charset "UTF-8";
 
 .escudo {
     height: 150px;
@@ -168,4 +162,3 @@
         grid-template-columns: 1fr;
     }
 }
-
