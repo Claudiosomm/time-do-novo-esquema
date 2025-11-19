@@ -1,17 +1,4 @@
-:root {
-    --preto: #000000;
-    --amarelo: #c9a402; /* Amarelo escuro */
-    --cinza: #f0f0f0;
-    --branco: #ffffff;
-}
-
-/* RESET */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--cinza); /* Fundo mais claro para contraste */
-    color: var(--preto); /* Texto em preto */
-}
+@charset "UTF-8";
 
 /* HEADER */
 header {
@@ -203,4 +190,3 @@ nav a {
         grid-template-columns: 1fr;
     }
 }
-
