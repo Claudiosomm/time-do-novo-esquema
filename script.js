@@ -17,10 +17,6 @@ document.querySelectorAll(".foto-jogador").forEach(img => {
     });
 });
 
-lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-});
-
 // -------------------------------
 // COMENTÁRIOS
 // -------------------------------
