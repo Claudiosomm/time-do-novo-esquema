@@ -13,3 +13,169 @@ body {
     font-family: Arial, sans-serif;
     background: var(--cinza);
     color: var(--preto);
+}
+
+/* PADRONIZAÇÃO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+    background: var(--preto);
+    color: var(--amarelo);
+    padding: 10px 20px;
+    min-height: 150px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* ESCUDO CENTRALIZADO E RESPONSIVO */
+.escudo {
+    height: 320px;
+    max-width: 200%;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--amarelo);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* HAMBÚRGUER */
+.menu-btn {
+    display: none;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: var(--amarelo);
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background: var(--preto);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border-left: 2px solid var(--amarelo);
+        border-bottom: 2px solid var(--amarelo);
+    }
+
+    nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--amarelo);
+    }
+}
+
+/* ------------------------------
+       ELENCO – GRADE DE FOTOS
+--------------------------------*/
+.elenco {
+    padding: 20px;
+    text-align: center;
+}
+
+.galeria-elenco {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Continua 3 por linha */
+    gap: 30px; /* Espaço maior entre as caixas */
+    padding: 20px;
+}
+
+.jogador-card {
+    background: var(--branco);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 10px #0003;
+    min-height: 350px; /* AUMENTA A CAIXA */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.foto-jogador {
+    width: 100%;
+    height: 250px;     /* AUMENTA A ALTURA DA FOTO */
+    object-fit: cover; /* Mantém bonito sem distorcer */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Comentários */
+.comentarios {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.comentarios p {
+    background: var(--cinza);
+    padding: 6px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.form-comentario {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.form-comentario input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-comentario button {
+    padding: 8px 12px;
+    background: var(--preto);
+    color: var(--amarelo);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsivo – Elenco */
+@media (max-width: 768px) {
+    .galeria-elenco {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-elenco {
+        grid-template-columns: 1fr;
+    }
+}
