@@ -7,6 +7,8 @@
     --branco: #c9a402;
 }
 
+
+
 /* RESET */
 body {
     margin: 0;
@@ -24,6 +26,8 @@ body {
 
 /* HEADER */
 header {
+    position: relative; /* importante para z-index funcionar */
+    z-index: 10;
     background: var(--preto);
     color: var(--amarelo);
     padding: 10px 20px;
@@ -49,6 +53,8 @@ header {
 nav {
     display: flex;
     gap: 20px;
+    z-index: 9998;
+    font-weight: bold;
 }
 
 nav a {
@@ -59,6 +65,7 @@ nav a {
 
 /* HAMBÚRGUER */
 .menu-btn {
+    z-index: 9999; /* fica sempre por cima do vídeo */
     display: none;
     font-size: 32px;
     background: none;
@@ -178,4 +185,8 @@ nav a {
     .galeria-elenco {
         grid-template-columns: 1fr;
     }
+}
+footer{
+    padding: 200px;
+    text-align: center;
 }
