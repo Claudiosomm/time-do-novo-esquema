@@ -10,6 +10,56 @@
     text-align: center;
 }
 
+
+.galeria-elenco {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 5 fotos por linha */
+    gap: 20px; /* espaço entre as fotos */
+    padding: 20px;
+    justify-items: center; /* centraliza as fotos */
+}
+
+/* Ajustar tamanho das fotos */
+.galeria-elenco img {
+    width: 200px;       /* largura padrão */
+    height: 200px;      /* altura padrão */
+    object-fit: cover;  /* corte inteligente da imagem */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+@media (max-width: 768px) {
+    .galeria-elenco {
+        grid-template-columns: repeat(3, 1fr); /* 3 fotos por linha no tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-elenco {
+        grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha no celular */
+    }
+
+    .galeria-elenco img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* Efeito ao passar o mouse */
+.galeria-elenco img:hover {
+    transform: scale(1.05);
+}
+
+.foto {
+    width: 100%;
+    max-width: 180px; /* tamanho das fotos */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
 .elenco h1 {
     font-size: 28px;
     margin-bottom: 20px;
@@ -19,14 +69,6 @@
 .elenco p {
     font-size: 16px;
     color: #444;
-}
-
-/* GRADE DE FOTOS */
-.galeria-elenco {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 fotos por linha no desktop */
-    gap: 20px;
-    padding: 20px;
 }
 
 /* CARD DE JOGADOR */
