@@ -51,6 +51,12 @@ nav a {
     border-radius: 10px;
 }
 
+.sobre{
+    text-indent: 15px; /* recuo da primeira linha */ 
+    text-align: justify; /* se quiser justificar */
+    margin-bottom: 12px;
+}
+
 /* Galeria */
 .galeria {
     display: flex;
@@ -79,7 +85,24 @@ nav a {
     max-width: 450px;
     border-radius: 12px;
 }
+.sobre{
+    font-size: 15px;
+    text-align: center;
+    padding: 30px;
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px;
+}
 
+.galeria{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding: 10%;
+}
+ 
 /* RESPONSIVO */
 @media (max-width: 768px) {
 
