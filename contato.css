@@ -1,179 +1,132 @@
 @charset "UTF-8";
 
-.escudo {
-    height: 150px;
-    text-align: justify;
-}
-.jogador {
-    height: 1px;
-    text-align: justify;
-}
+/* ============================
+   ESTILOS DA PÁGINA ELENCO
+============================== */
 
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: var(--amarelo); /* Amarelo escuro para os links */
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Botão hambúrguer */
-.menu-btn {
-    display: none;
-    font-size: 34px;
-    background: none;
-    border: none;
-    color: var(--amarelo); /* Amarelo escuro no botão */
-    cursor: pointer;
-}
-
-/* Cards */
-.card {
-    background: var(--branco); /* Fundo branco para os cards */
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* Galeria */
-.galeria {
-    display: flex;
-    gap: 10px;
-}
-
-.foto {
-    width: 150px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    width: 90%;
-    max-width: 450px;
-    border-radius: 12px;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-
-    .menu-btn {
-        display: block; /* Exibe o botão hambúrguer no celular */
-    }
-
-    nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: var(--preto); /* Menu com fundo preto */
-        width: 200px;
-        flex-direction: column;
-        padding: 20px;
-        border-left: 2px solid var(--amarelo); /* Bordas amarelas */
-        border-bottom: 2px solid var(--amarelo);
-    }
-
-    nav a {
-        padding: 10px 0;
-        border-bottom: 1px solid var(--amarelo);
-    }
-
-    .galeria {
-        flex-direction: column; /* Fotos empilhadas em telas menores */
-    }
-
-    .foto {
-        width: 100%;
-    }
-}
-/* ================================
-   ELENCO – GRADE DE FOTOS
-================================ */
+/* Título da página de elenco */
 .elenco {
     padding: 20px;
     text-align: center;
 }
 
+
 .galeria-elenco {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr); /* 5 fotos por linha */
+    gap: 20px; /* espaço entre as fotos */
     padding: 20px;
+    justify-items: center; /* centraliza as fotos */
 }
 
-.jogador-card {
-    background: var(--branco);
+/* Ajustar tamanho das fotos */
+.galeria-elenco img {
+    width: 200px;       /* largura padrão */
+    height: 200px;      /* altura padrão */
+    object-fit: cover;  /* corte inteligente da imagem */
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 0 8px #0002;
-}
-
-/* Fotos */
-.foto-jogador {
-    width: 100%;
-    border-radius: 8px;
     cursor: pointer;
+    transition: transform .2s;
 }
 
-/* Comentários */
-.comentarios {
-    text-align: left;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.comentarios p {
-    background: var(--cinza);
-    padding: 6px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-.form-comentario {
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-.form-comentario input {
-    flex: 1;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-}
-
-.form-comentario button {
-    padding: 8px 12px;
-    background: var(--preto);
-    color: var(--amarelo);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Responsivo */
 @media (max-width: 768px) {
     .galeria-elenco {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr); /* 3 fotos por linha no tablet */
     }
 }
 
 @media (max-width: 480px) {
     .galeria-elenco {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha no celular */
+    }
+
+    .galeria-elenco img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* Efeito ao passar o mouse */
+.galeria-elenco img:hover {
+    transform: scale(1.05);
+}
+
+.foto {
+    width: 100%;
+    max-width: 180px; /* tamanho das fotos */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.elenco h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--preto);
+}
+
+.elenco p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* CARD DE JOGADOR */
+.jogador-card {
+    background: var(--branco);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* FOTO DO JOGADOR */
+.foto-jogador {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ÁREA DE COMENTÁRIOS */
+.comentarios {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.comentarios input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.comentarios button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    background: var(--amarelo);
+    color: var(--preto);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* RESPONSIVO PARA CELULAR */
+@media (max-width: 768px) {
+    .galeria-elenco {
+        grid-template-columns: 1fr 1fr; /* 2 fotos por linha no tablet */
+    }
+
+    .foto-jogador {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-elenco {
+        grid-template-columns: 1fr; /* 1 foto por linha no celular */
     }
 }
