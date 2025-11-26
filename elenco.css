@@ -20,6 +20,7 @@
     width: 100%;
     max-width: 200px; /* largura máxima da foto */
     text-align: center;
+    box-shadow: 04px 4px 4px 4px rgba(2, 2, 2, 2);
 }
 
 /* ===================================================================
