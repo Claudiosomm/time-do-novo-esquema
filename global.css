@@ -186,7 +186,21 @@ nav a {
         grid-template-columns: 1fr;
     }
 }
-footer{
-    padding: 200px;
+/* ------------------------------
+       FOOTER RESPONSIVO
+--------------------------------*/
+footer {
+    background: var(--preto);
+    color: var(--amarelo);
+    padding: 20px 10px; /* altura normal */
     text-align: center;
+    font-size: 16px;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 10px; /* levemente maior no celular */
+        font-size: 14px;
+    }
 }
