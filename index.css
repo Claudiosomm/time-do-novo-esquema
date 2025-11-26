@@ -20,7 +20,7 @@ div{
 }
 
 .tema{
-    font-size:50px;
+    font-size:30px;
     padding-top: 0px;
     text-align: center;
 }
@@ -48,10 +48,12 @@ main{
     gap: 20px;
     position: relative;
     padding: 20px;
-
 }
 
-
+h1{
+    font-size: 30px;
+    padding-bottom: 20px;
+}
 
 .escudo {
     height: 150px;
