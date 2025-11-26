@@ -185,6 +185,11 @@ h1{
     margin-top: 10px;
 }
 
+.sobre{
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
 .form-comentario input {
     flex: 1;
     padding: 8px;
