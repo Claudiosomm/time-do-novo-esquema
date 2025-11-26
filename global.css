@@ -1,129 +1,98 @@
 @charset "UTF-8";
 
-div{
+:root {
+    --preto: #000000;
+    --amarelo: #c9a402; /* Amarelo escuro */
+    --cinza: #c9a402;
+    --branco: #c9a402;
+}
+
+
+
+/* RESET */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--cinza);
+    color: var(--preto);
+}
+
+/* PADRONIZAÇÃO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+    position: relative; /* importante para z-index funcionar */
+    z-index: 10;
+    background: var(--preto);
+    color: var(--amarelo);
+    padding: 10px 20px;
+    min-height: 150px;
     text-align: center;
-    font-size: 16px;
 }
 
-/* Container que mantém a proporção 16:9 */
-.video-container {
-    position: relative;
-    z-index: 1; /*vídeo fica atrás do menu*/
-    width: 100%;
-    max-width: 900px; /* tamanho máximo do vídeo */
-    margin: 20px auto; /* centraliza */
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #0004;
-}
-
-.tema{
-    font-size:30px;
-    padding-top: 0px;
-    text-align: center;
-}
-
-.evento{
-    font-size:30px;
-    padding-top: 0px;
-    text-align: center;
-}
-
-/* Ajuste do iframe dentro do container */
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-main{
+.header-content {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     position: relative;
-    padding: 20px;
 }
 
-h1{
-    font-size: 30px;
-    padding-bottom: 20px;
-}
-
+/* ESCUDO CENTRALIZADO E RESPONSIVO */
 .escudo {
-    height: 150px;
-    text-align: justify;
+    height: 320px;
+    max-width: 200%;
 }
 
-/* Botão hambúrguer */
+/* MENU */
+nav {
+    display: flex;
+    gap: 20px;
+    z-index: 9998;
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--amarelo);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* HAMBÚRGUER */
 .menu-btn {
+    z-index: 9999; /* fica sempre por cima do vídeo */
     display: none;
-    font-size: 34px;
+    font-size: 32px;
     background: none;
     border: none;
-    color: var(--amarelo); /* Amarelo escuro no botão */
+    color: var(--amarelo);
     cursor: pointer;
+    position: absolute;
+    right: 10px;
 }
 
-/* Cards */
-.card {
-    background: var(--branco); /* Fundo branco para os cards */
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* Galeria */
-.galeria {
-    display: flex;
-    gap: 10px;
-}
-
-.foto {
-    width: 150px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    width: 90%;
-    max-width: 450px;
-    border-radius: 12px;
-}
-
-/* RESPONSIVO */
+/* MOBILE */
 @media (max-width: 768px) {
 
     .menu-btn {
-        display: block; /* Exibe o botão hambúrguer no celular */
+        display: block;
     }
 
     nav {
         display: none;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: var(--preto); /* Menu com fundo preto */
-        width: 200px;
         flex-direction: column;
-        padding: 20px;
-        border-left: 2px solid var(--amarelo); /* Bordas amarelas */
+        background: var(--preto);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        border-left: 2px solid var(--amarelo);
         border-bottom: 2px solid var(--amarelo);
     }
 
@@ -131,18 +100,11 @@ h1{
         padding: 10px 0;
         border-bottom: 1px solid var(--amarelo);
     }
-
-    .galeria {
-        flex-direction: column; /* Fotos empilhadas em telas menores */
-    }
-
-    .foto {
-        width: 100%;
-    }
 }
-/* ================================
-   ELENCO – GRADE DE FOTOS
-================================ */
+
+/* ------------------------------
+       ELENCO – GRADE DE FOTOS
+--------------------------------*/
 .elenco {
     padding: 20px;
     text-align: center;
@@ -150,24 +112,31 @@ h1{
 
 .galeria-elenco {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Continua 3 por linha */
+    gap: 30px; /* Espaço maior entre as caixas */
     padding: 20px;
 }
 
 .jogador-card {
     background: var(--branco);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 0 8px #0002;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 10px #0003;
+    min-height: 350px; /* AUMENTA A CAIXA */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-/* Fotos */
+
 .foto-jogador {
     width: 100%;
-    border-radius: 8px;
+    height: 250px;     /* AUMENTA A ALTURA DA FOTO */
+    object-fit: cover; /* Mantém bonito sem distorcer */
+    border-radius: 10px;
     cursor: pointer;
 }
+
 
 /* Comentários */
 .comentarios {
@@ -192,8 +161,8 @@ h1{
 .form-comentario input {
     flex: 1;
     padding: 8px;
-    border-radius: 5px;
     border: 1px solid #aaa;
+    border-radius: 5px;
 }
 
 .form-comentario button {
@@ -205,7 +174,7 @@ h1{
     cursor: pointer;
 }
 
-/* Responsivo */
+/* Responsivo – Elenco */
 @media (max-width: 768px) {
     .galeria-elenco {
         grid-template-columns: 1fr 1fr;
@@ -215,5 +184,23 @@ h1{
 @media (max-width: 480px) {
     .galeria-elenco {
         grid-template-columns: 1fr;
+    }
+}
+/* ------------------------------
+       FOOTER RESPONSIVO
+--------------------------------*/
+footer {
+    background: var(--preto);
+    color: var(--amarelo);
+    padding: 20px 10px; /* altura normal */
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 10px; /* levemente maior no celular */
+        font-size: 14px;
     }
 }
