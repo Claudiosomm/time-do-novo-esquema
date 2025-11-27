@@ -5,6 +5,13 @@ div{
     font-size: 16px;
 }
 
+div > h1 {
+    padding: 30px;
+    margin-top: 30px;
+    background: linear-gradient(to right, black,#c9a402); /* preto → cinza */
+    color: #c9a402;
+}
+
 /* Container que mantém a proporção 16:9 */
 .video-container {
     position: relative;
