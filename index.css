@@ -5,6 +5,9 @@ div{
     font-size: 16px;
 }
 
+p{
+    margin-top: 30px;
+}
 div > h1 {
     padding: 30px;
     margin-top: 30px;
