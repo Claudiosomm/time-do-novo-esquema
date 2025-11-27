@@ -39,7 +39,7 @@ h1{
    =================================================================== */
 .imagem-container img {
     width: 100%;
-    height: 250px;      /* pode ajustar */
+    height: 350px;      /* pode ajustar */
     object-fit: cover;  /* mantém a proporção bonita */
     object-position: top; /* PRIORIDADE: mostrar o rosto */
     border-radius: 10px;
