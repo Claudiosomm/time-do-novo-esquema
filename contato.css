@@ -10,6 +10,12 @@
     text-align: center;
 }
 
+div > h1 {
+    padding: 30px;
+    margin-top: 30px;
+    background: linear-gradient(to right, black,#c9a402); /* preto → cinza */
+    color: #c9a402;
+}
 
 .galeria-elenco {
     display: grid;
