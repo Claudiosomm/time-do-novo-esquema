@@ -1,12 +1,67 @@
-.jogo-proximo{
-    padding-left: 30px;
+/* ===================================================================
+   GALERIA DE FOTOS - LAYOUT GERAL
+   5 fotos por linha no computador
+   =================================================================== */
+   .galeria {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 5 colunas no PC */
+    gap: 20px; /* espaço entre as fotos */
+    padding: 20px;
+    justify-items: center; /* centraliza os itens no grid */
 }
-.jogo-passado{
-    padding-left: 30px;
+
+/* ===================================================================
+   BLOCO INDIVIDUAL DE CADA JOGADOR (foto + texto)
+   =================================================================== */
+.imagem-container {
+    background: #ffffff20; /* leve transparência */
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px; /* largura máxima da foto */
+    text-align: center;
+    box-shadow: 04px 4px 4px 4px rgba(2, 2, 2, 2);
 }
-h1{
-    padding-left: 30px;
+
+/* ===================================================================
+   IMAGEM DO JOGADOR
+   object-position: top  -> Mantém o rosto visível
+   =================================================================== */
+.imagem-container img {
+    width: 100%;
+    height: 250px;      /* pode ajustar */
+    object-fit: cover;  /* mantém a proporção bonita */
+    object-position: top; /* PRIORIDADE: mostrar o rosto */
+    border-radius: 10px;
 }
-h2{
-    padding-left: 30px;
+
+/* ===================================================================
+   TEXTO ABAIXO DA FOTO
+   =================================================================== */
+.imagem-container div {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.3;
 }
+
+/* ===================================================================
+   RESPONSIVIDADE – CELULAR
+   Apenas 1 foto por linha
+   Aumenta o tamanho da foto no celular
+   =================================================================== */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: 1fr; /* 1 por linha */
+    }
+
+    .imagem-container {
+        max-width: 90%; /* ocupa quase a tela toda */
+    }
+
+    .imagem-container img {
+        height: 320px; /* foto maior no celular */
+        object-position: top; /* mantém o rosto */
+    }
+}
+
