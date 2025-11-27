@@ -10,6 +10,20 @@
     justify-items: center; /* centraliza os itens no grid */
 }
 
+h1{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+div > h1 {
+    padding: 30px;
+    margin-top: 30px;
+    background: linear-gradient(to right, black,#c9a402); /* preto → cinza */
+    color: #c9a402;
+}
+
+
 /* ===================================================================
    BLOCO INDIVIDUAL DE CADA JOGADOR (foto + texto)
    =================================================================== */
