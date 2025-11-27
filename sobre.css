@@ -11,6 +11,10 @@ padding-left: 30px;
 padding-right: 30px;
 }
 
+section{
+    margin-top: 30px;
+}
+
 h1{
     text-align: center;
     padding-top: 50px;
@@ -22,7 +26,6 @@ div > h1 {
     margin-top: 30px;
     background: linear-gradient(to right, black,#c9a402); /* preto → cinza */
     color: #c9a402;
-    text-align: center;
 }
 
 
@@ -253,4 +256,3 @@ h1{
         grid-template-columns: 1fr;
     }
 }
-
