@@ -6,6 +6,11 @@ h1{
     padding-top: 50px;
 }
 
+h2{
+padding-left: 30px;
+padding-right: 30px;
+}
+
 p{
     padding-left: 50px;
     padding-right: 50px;
@@ -233,13 +238,3 @@ h1{
         grid-template-columns: 1fr;
     }
 }
-
-
-
-
-
-
-
-
-
-
