@@ -2,6 +2,7 @@
 @charset "UTF-8";
 
 h1{
+    
     text-align: center;
     padding-top: 50px;
 }
@@ -256,3 +257,4 @@ h1{
         grid-template-columns: 1fr;
     }
 }
+
