@@ -1,36 +1,79 @@
+
 @charset "UTF-8";
 
-/* HEADER */
-header {
-    background: var(--preto); /* Fundo preto */
-    color: var(--amarelo); /* Texto amarelo escuro */
-    padding: 15px 20px;
+h1{
+    text-align: center;
+    padding-top: 50px;
 }
 
-.header-content {
+p{
+    padding-left: 50px;
+    padding-right: 50px;
+    text-indent: 30px;
+    text-align: justify;     /* Alinha dos dois lados */
+    hyphens: auto;           /* Hifeniza automaticamente */
+    -webkit-hyphens: auto;   /* Safari */
+    -ms-hyphens: auto;       /* IE */
+    word-wrap: break-word;   /* Garante quebra */ 
+}
+div{
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Container que mantém a proporção 16:9 */
+.video-container {
+    position: relative;
+    z-index: 1; /*vídeo fica atrás do menu*/
+    width: 100%;
+    max-width: 900px; /* tamanho máximo do vídeo */
+    margin: 20px auto; /* centraliza */
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0004;
+}
+
+.tema{
+    font-size:30px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.evento{
+    font-size:30px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+/* Ajuste do iframe dentro do container */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+main{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+h1{
+    font-size: 30px;
+    padding-bottom: 20px;
 }
 
 .escudo {
     height: 150px;
     text-align: justify;
-}
-.jogador {
-    height: 1px;
-    text-align: justify;
-}
-
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: var(--amarelo); /* Amarelo escuro para os links */
-    font-weight: bold;
-    text-decoration: none;
 }
 
 /* Botão hambúrguer */
@@ -49,12 +92,6 @@ nav a {
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
-}
-
-.sobre{
-    text-indent: 15px; /* recuo da primeira linha */ 
-    text-align: justify; /* se quiser justificar */
-    margin-bottom: 12px;
 }
 
 /* Galeria */
@@ -85,24 +122,7 @@ nav a {
     max-width: 450px;
     border-radius: 12px;
 }
-.sobre{
-    font-size: 15px;
-    text-align: center;
-    padding: 30px;
-}
-h1{
-    font-size: 30px;
-    text-align: center;
-    padding-top: 30px;
-}
 
-.galeria{
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    padding: 10%;
-}
- 
 /* RESPONSIVO */
 @media (max-width: 768px) {
 
@@ -185,11 +205,6 @@ h1{
     margin-top: 10px;
 }
 
-.sobre{
-    padding-left: 45px;
-    padding-right: 45px;
-}
-
 .form-comentario input {
     flex: 1;
     padding: 8px;
@@ -218,3 +233,13 @@ h1{
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+
+
+
+
+
+
