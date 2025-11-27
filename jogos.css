@@ -4,50 +4,45 @@ h1{
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 /* ===================================================================
-   GALERIA DE FOTOS - LAYOUT GERAL
-   5 fotos por linha no computador
+   GALERIA DE FOTOS
    =================================================================== */
-   .galeria {
+.galeria {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 5 colunas no PC */
-    gap: 20px; /* espaço entre as fotos */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
     padding: 20px;
-    justify-items: center; /* centraliza os itens no grid */
+    justify-items: center;
 }
 
 /* ===================================================================
-   BLOCO INDIVIDUAL DE CADA JOGADOR (foto + texto)
+   BLOCO DA FOTO + TEXTO
    =================================================================== */
 .imagem-container {
-    background: #ffffff20; /* leve transparência */
+    background: #ffffff20;
     padding: 10px;
     border-radius: 10px;
     width: 100%;
-    max-width: 200px; /* largura máxima da foto */
+    max-width: 200px;
     text-align: center;
-    box-shadow: 04px 4px 4px 4px rgba(2, 2, 2, 2);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    max-height: 450px;
-    
+    box-shadow: 0 4px 4px rgba(2, 2, 2, 0.2);
+    margin: 20px;
 }
 
 /* ===================================================================
-   IMAGEM DO JOGADOR
-   object-position: top  -> Mantém o rosto visível
+   IMAGEM — RESPONSIVA E SEM CORTAR
    =================================================================== */
 .imagem-container img {
     width: 100%;
-    max-height: 450px;      /* pode ajustar */
-    object-fit: cover;  /* mantém a proporção bonita */
-    object-position: top; /* PRIORIDADE: mostrar o rosto */
+    height: auto;           /* NÃO CORTA MAIS */
+    max-width: 100%;
+    object-fit: contain;    /* Mostra a imagem inteira */
     border-radius: 10px;
 }
 
 /* ===================================================================
-   TEXTO ABAIXO DA FOTO
+   TEXTO
    =================================================================== */
 .imagem-container div {
     margin-top: 8px;
@@ -57,22 +52,20 @@ h1{
 }
 
 /* ===================================================================
-   RESPONSIVIDADE – CELULAR
-   Apenas 1 foto por linha
-   Aumenta o tamanho da foto no celular
+   CELULAR — 1 FOTO POR LINHA E RESPONSIVA
    =================================================================== */
 @media (max-width: 768px) {
     .galeria {
-        grid-template-columns: 1fr; /* 1 por linha */
+        grid-template-columns: 1fr;
     }
 
     .imagem-container {
-        max-width: 90%; /* ocupa quase a tela toda */
+        max-width: 95%; 
     }
 
     .imagem-container img {
-        height: 320px; /* foto maior no celular */
-        object-position: top; /* mantém o rosto */
+        width: 100%;
+        height: auto;       /* Mantém a imagem sem cortar */
+        object-fit: contain;
     }
 }
-
