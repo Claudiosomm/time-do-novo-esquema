@@ -1,36 +1,28 @@
-
 @charset "UTF-8";
 
 h1{
-    
     text-align: center;
     padding-top: 50px;
+    padding-bottom: 20px;
 }
 
-h2{
-padding-left: 30px;
-padding-right: 30px;
+h2 {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-section{
+section {
     margin-top: 30px;
-}
-
-h1{
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 div > h1 {
     padding: 30px;
     margin-top: 30px;
-    background: linear-gradient(to right, black,#c9a402); /* preto → cinza */
+    background: linear-gradient(to right, black, #c9a402); /* preto → cinza */
     color: #c9a402;
 }
 
-
-p{
+p {
     padding-left: 50px;
     padding-right: 50px;
     text-indent: 30px;
@@ -38,9 +30,10 @@ p{
     hyphens: auto;           /* Hifeniza automaticamente */
     -webkit-hyphens: auto;   /* Safari */
     -ms-hyphens: auto;       /* IE */
-    word-wrap: break-word;   /* Garante quebra */ 
+    word-wrap: break-word;   /* Garante quebra */
 }
-div{
+
+div {
     text-align: center;
     font-size: 16px;
 }
@@ -48,10 +41,10 @@ div{
 /* Container que mantém a proporção 16:9 */
 .video-container {
     position: relative;
-    z-index: 1; /*vídeo fica atrás do menu*/
+    z-index: 1; /* Vídeo fica atrás do menu */
     width: 100%;
-    max-width: 900px; /* tamanho máximo do vídeo */
-    margin: 20px auto; /* centraliza */
+    max-width: 900px; /* Tamanho máximo do vídeo */
+    margin: 20px auto; /* Centraliza */
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
@@ -59,14 +52,14 @@ div{
     box-shadow: 0 0 10px #0004;
 }
 
-.tema{
-    font-size:30px;
+.tema {
+    font-size: 30px;
     padding-top: 0px;
     text-align: center;
 }
 
-.evento{
-    font-size:30px;
+.evento {
+    font-size: 30px;
     padding-top: 0px;
     text-align: center;
 }
@@ -81,7 +74,7 @@ div{
     border: none;
 }
 
-main{
+main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +83,7 @@ main{
     padding: 20px;
 }
 
-h1{
+h1 {
     font-size: 30px;
     padding-bottom: 20px;
 }
@@ -122,6 +115,8 @@ h1{
 .galeria {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* Adicionado para garantir que a galeria se ajuste no celular */
+    justify-content: center;
 }
 
 .foto {
@@ -134,9 +129,11 @@ h1{
 .lightbox {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
@@ -147,39 +144,6 @@ h1{
     border-radius: 12px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-
-    .menu-btn {
-        display: block; /* Exibe o botão hambúrguer no celular */
-    }
-
-    nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: var(--preto); /* Menu com fundo preto */
-        width: 200px;
-        flex-direction: column;
-        padding: 20px;
-        border-left: 2px solid var(--amarelo); /* Bordas amarelas */
-        border-bottom: 2px solid var(--amarelo);
-    }
-
-    nav a {
-        padding: 10px 0;
-        border-bottom: 1px solid var(--amarelo);
-    }
-
-    .galeria {
-        flex-direction: column; /* Fotos empilhadas em telas menores */
-    }
-
-    .foto {
-        width: 100%;
-    }
-}
 /* ================================
    ELENCO – GRADE DE FOTOS
 ================================ */
@@ -245,16 +209,51 @@ h1{
     cursor: pointer;
 }
 
-/* Responsivo */
+/* Responsivo – Ajustes para telas pequenas */
 @media (max-width: 768px) {
     .galeria-elenco {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* 2 colunas para telas menores */
+    }
+
+    .galeria {
+        flex-direction: column; /* Layout vertical para a galeria */
+        gap: 15px;
+    }
+
+    .foto {
+        width: 100%; /* Fotos vão ocupar toda a largura disponível */
     }
 }
 
 @media (max-width: 480px) {
     .galeria-elenco {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */
+    }
+
+    .video-container {
+        padding-bottom: 56.25%; /* Mantém o vídeo com proporção 16:9 */
+    }
+
+    .escudo {
+        height: 120px;
     }
 }
 
+/* ======================================
+   FOOTER
+====================================== */
+footer {
+    background: var(--preto);
+    color: var(--amarelo);
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Footer no celular */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 10px;
+        font-size: 14px;
+    }
+}
