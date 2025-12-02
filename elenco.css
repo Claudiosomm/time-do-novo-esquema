@@ -33,21 +33,28 @@ div > h1 {
     width: 100%;
     max-width: 200px;
     text-align: center;
-    box-shadow: 04px 4px 4px 4px rgba(2, 2, 2, 2);
+    box-shadow: 02px 2px 2px 2px rgba(2, 2, 2, 2);
 }
 
 /* ===================================================================
    IMAGEM DO JOGADOR
    object-position: top -> Mantém o rosto visível
 =================================================================== */
+
 .imagem-container img {
     width: 100%;
-    height: auto;  /* Agora a altura da imagem vai se ajustar ao tamanho da largura */
+    height: auto;
     object-fit: cover;
     object-position: top;
     border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Efeito de transição para as imagens */
 }
+
+.imagem-container img:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
 
 /* ===================================================================
    TEXTO ABAIXO DA FOTO
@@ -62,16 +69,24 @@ div > h1 {
 /* ===================================================================
    RESPONSIVIDADE – CELULAR
 =================================================================== */
+
 @media (max-width: 768px) {
     .galeria {
-        grid-template-columns: 1fr; /* 1 foto por linha */
+        grid-template-columns: 6fr; /* 1 foto por linha */
     }
+
 
     .imagem-container {
         max-width: 90%; /* ocupa quase toda a tela */
     }
 
+
     .imagem-container img {
         height: auto; /* A altura agora se adapta ao tamanho da tela */
+    }
+
+
+    .imagem-container div {
+        font-size: 16px; /* Aumenta o tamanho da fonte nas telas menores */
     }
 }
