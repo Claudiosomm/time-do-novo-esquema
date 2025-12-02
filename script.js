@@ -1,62 +1,51 @@
-// Menu hambúrguer (mantém igual)
-document.getElementById("menu-btn").addEventListener("click", function () {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-});
+// ... restante do código permanece igual ...
 
-// -------------------------------
-// LIGHTBOX
-// -------------------------------
-const lightbox = document.getElementById("lightbox");
-const lightImg = document.getElementById("lightbox-img");
+document.getElementById('uploadButton').addEventListener('click', function() {
+    const fileInput = document.getElementById('uploadInput');
+    const file = fileInput.files[0];
 
-document.querySelectorAll(".foto-jogador").forEach(img => {
-    img.addEventListener("click", () => {
-        lightImg.src = img.src;
-        lightbox.style.display = "flex";
+    if (!file) {
+        alert("Por favor, selecione uma imagem para enviar.");
+        return;
+    }
+
+    document.getElementById('status').textContent = "Enviando...";
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'preset_padrao'); // <<< SUBSTITUA X PELO NOME DO SEU UPLOAD PRESET
+
+    // URL do Cloudinary
+    const url = 'diiv5x8ub'; // <<< SUBSTITUA X PELO SEU CLOUD NAME
+
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        const imageUrl = data.secure_url;
+        document.getElementById('status').textContent = "Upload concluído!";
+
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = 'Imagem enviada';
+
+        const newImageContainer = document.createElement('div');
+        newImageContainer.classList.add('imagem-container');
+
+        const newImageLink = document.createElement('a');
+        newImageLink.href = imageUrl;
+        newImageLink.classList.add('lightbox');
+
+        newImageLink.appendChild(img);
+        newImageContainer.appendChild(newImageLink);
+
+        const gallery = document.getElementById('gallery');
+        gallery.appendChild(newImageContainer);
+    })
+    .catch(error => {
+        console.error("Erro no upload:", error);
+        document.getElementById('status').textContent = "Erro no upload. Tente novamente.";
     });
-});
-
-// -------------------------------
-// COMENTÁRIOS
-// -------------------------------
-function carregarComentarios(id) {
-    let lista = localStorage.getItem("comentarios-" + id);
-    return lista ? JSON.parse(lista) : [];
-}
-
-function salvarComentario(id, texto) {
-    const lista = carregarComentarios(id);
-    lista.push(texto);
-    localStorage.setItem("comentarios-" + id, JSON.stringify(lista));
-}
-
-function atualizarComentarios(id) {
-    const div = document.getElementById("comentarios-" + id);
-    const lista = carregarComentarios(id);
-
-    div.innerHTML = "";
-
-    lista.forEach(c => {
-        const p = document.createElement("p");
-        p.textContent = c;
-        div.appendChild(p);
-    });
-}
-
-document.querySelectorAll(".form-comentario").forEach(form => {
-    form.addEventListener("submit", e => {
-        e.preventDefault();
-        const id = form.getAttribute("data-id");
-        const input = form.querySelector("input");
-
-        salvarComentario(id, input.value);
-        atualizarComentarios(id);
-        input.value = "";
-    });
-});
-
-// Carrega comentários ao abrir a página
-document.querySelectorAll(".form-comentario").forEach(form => {
-    atualizarComentarios(form.getAttribute("data-id"));
 });
