@@ -1,5 +1,16 @@
 
-h1{
+/* ===================================================================
+   GALERIA DE FOTOS - LAYOUT GERAL
+=================================================================== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas no PC */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+h1 {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -8,25 +19,14 @@ h1{
 div > h1 {
     padding: 30px;
     margin-top: 30px;
-    background: linear-gradient(to right, black,#c9a402); /* preto → cinza */
+    background: linear-gradient(to right, black, #c9a402); /* preto → cinza */
     color: #c9a402;
-}
-
-
-/* ===================================================================
-   GALERIA DE FOTOS
-   =================================================================== */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
+    text-align: center;
 }
 
 /* ===================================================================
-   BLOCO DA FOTO + TEXTO
-   =================================================================== */
+   BLOCO INDIVIDUAL DE CADA JOGADOR (foto + texto)
+=================================================================== */
 .imagem-container {
     background: #ffffff20;
     padding: 10px;
@@ -34,24 +34,32 @@ div > h1 {
     width: 100%;
     max-width: 200px;
     text-align: center;
-    box-shadow: 0 4px 4px rgba(2, 2, 2, 0.2);
-    margin: 20px;
+    box-shadow: 04px 4px 4px 4px rgba(2, 2, 2, 2);
 }
 
 /* ===================================================================
-   IMAGEM — RESPONSIVA E SEM CORTAR
-   =================================================================== */
+   IMAGEM DO JOGADOR
+   object-position: top -> Mantém o rosto visível
+=================================================================== */
+
 .imagem-container img {
     width: 100%;
-    height: auto;           /* NÃO CORTA MAIS */
-    max-width: 100%;
-    object-fit: contain;    /* Mostra a imagem inteira */
+    height: auto;
+    object-fit: cover;
+    object-position: top;
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Efeito de transição para as imagens */
 }
 
+.imagem-container img:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+
 /* ===================================================================
-   TEXTO
-   =================================================================== */
+   TEXTO ABAIXO DA FOTO
+=================================================================== */
 .imagem-container div {
     margin-top: 8px;
     font-size: 14px;
@@ -60,20 +68,26 @@ div > h1 {
 }
 
 /* ===================================================================
-   CELULAR — 1 FOTO POR LINHA E RESPONSIVA
-   =================================================================== */
+   RESPONSIVIDADE – CELULAR
+=================================================================== */
+
 @media (max-width: 768px) {
     .galeria {
-        grid-template-columns: 1fr;
+        grid-template-columns: 6fr; /* 1 foto por linha */
     }
+
 
     .imagem-container {
-        max-width: 95%; 
+        max-width: 90%; /* ocupa quase toda a tela */
     }
 
+
     .imagem-container img {
-        width: 100%;
-        height: auto;       /* Mantém a imagem sem cortar */
-        object-fit: contain;
+        height: auto; /* A altura agora se adapta ao tamanho da tela */
+    }
+
+
+    .imagem-container div {
+        font-size: 16px; /* Aumenta o tamanho da fonte nas telas menores */
     }
 }
