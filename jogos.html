@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogos - Novo Esquema</title>
-    <link rel="stylesheet" href="jogos.css">
+    <title>Elenco - Novo Esquema</title>
+
+    <!-- CSS global (menu) -->
     <link rel="stylesheet" href="global.css">
+
+    <!-- CSS desta página -->
+    <link rel="stylesheet" href="jogos.css">
+
+    <!-- SimpleLightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="colocar a foto de favicon" type="image/x-icon">
 </head>
 <body>
@@ -23,26 +31,35 @@
         </div>
     </header>
     
-    
-    
-    
-    
-    <!-- SEÇÃO DE JOGOS -->
-    <section class="jogos">
-        <div>
-            <h1>Jogos passados</h1>  
-        </div>
-        
+    <div>
+        <h1>Jogos</h1>
+    </div>
+
+    <div class="galeria">
+        <!-- Imagem do Jhonny -->
         <div class="imagem-container">
-            <img src="foto2311.jpeg" alt="foto2311">
+            <a href="foto2311.jpeg" class="lightbox">
+                <img src="foto2311.jpeg" alt="foto2311">
+            </a>
             <div class="foto2311">
-                <p><strong>Jogão, 1x0 gol do Julio</strong></p>
+                <p>Esse é o Jhonny, um craque!!!</p>
             </div>
         </div>
-       
-    <!-- Adicione mais jogos passados conforme necessário -->
-    </section>
-    <script src="script.js"></script>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.js"></script>
+    
+    <script>
+        // Inicializa o SimpleLightbox com opções de responsividade
+        var lightbox = new SimpleLightbox('.lightbox', {
+            // Configuração para a responsividade da imagem
+            maxWidth: '90%',
+            maxHeight: '90vh',  // Limita a altura máxima da imagem
+            closeText: 'X',  // Fechar com um X
+        });
+    </script>
+
     <footer>
         &trade; Site criado pelo Cláudio para o time Novo Esquema F.C.
     </footer>
