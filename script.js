@@ -1,10 +1,3 @@
-script
-
-// Menu hambúrguer (mantém igual)
-document.getElementById("menu-btn").addEventListener("click", function () {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-});
 
 // -------------------------------
 // LIGHTBOX
@@ -62,27 +55,3 @@ document.querySelectorAll(".form-comentario").forEach(form => {
 document.querySelectorAll(".form-comentario").forEach(form => {
     atualizarComentarios(form.getAttribute("data-id"));
 });
-
-
-
-elenco.html
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.4.0/dist/simple-lightbox.min.js"></script>
-    
-    <script>
-        // Inicializa o SimpleLightbox com opções de responsividade
-        var lightbox = new SimpleLightbox('.lightbox', {
-            // Configuração para a responsividade da imagem
-            maxWidth: '90%',
-            maxHeight: '90vh',  // Limita a altura máxima da imagem
-            closeText: 'X',  // Fechar com um X
-        });
-    </script>
-
-    <footer>
-        &trade; Site criado pelo Cláudio para o time Novo Esquema F.C.
-    </footer>
-</body>
-</html>
