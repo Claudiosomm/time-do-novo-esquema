@@ -18,7 +18,7 @@ h1 {
 div > h1 {
     padding: 30px;
     margin-top: 30px;
-    background: linear-gradient(to right, black, #c9a402); /* preto → cinza */
+    background: linear-gradient(to right, #e06000, #c04000); /* preto → cinza */
     color: #c9a402;
     text-align: center;
 }
